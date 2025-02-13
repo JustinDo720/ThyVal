@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <Router>
+      <Router basename="/ThyVal">
         <div className='background'>
           <Routes>
             <Route path='/' element={<Introduction/>}></Route>
