@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "https://justindo720.github.io/ThyVal /static/css/main.f176eea7.css",
+    "main.js": "https://justindo720.github.io/ThyVal /static/js/main.95dbecbf.js",
+    "static/js/488.0ab1d56a.chunk.js": "https://justindo720.github.io/ThyVal /static/js/488.0ab1d56a.chunk.js",
+    "static/media/background.jpg": "https://justindo720.github.io/ThyVal /static/media/background.4cc8251adcff0bef4e5f.jpg",
+    "index.html": "https://justindo720.github.io/ThyVal /index.html",
+    "main.f176eea7.css.map": "https://justindo720.github.io/ThyVal /static/css/main.f176eea7.css.map",
+    "main.95dbecbf.js.map": "https://justindo720.github.io/ThyVal /static/js/main.95dbecbf.js.map",
+    "488.0ab1d56a.chunk.js.map": "https://justindo720.github.io/ThyVal /static/js/488.0ab1d56a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f176eea7.css",
+    "static/js/main.95dbecbf.js"
+  ]
+}
