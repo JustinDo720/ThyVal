@@ -9,6 +9,7 @@ import Placeholder from 'react-bootstrap/Placeholder';
 import Button from 'react-bootstrap/Button';
 import Toast from 'react-bootstrap/Toast';
 import Modal from 'react-bootstrap/Modal';
+import { motion } from "framer-motion"; 
 
 function Validated(){
     const location = useLocation();
@@ -88,7 +89,7 @@ function Validated(){
             <Row>
                 <Col xs={12} md={6}>
                     <Card style={{ background: 'transparent', border: 'transparent'}}>
-                        <Card.Img variant="top" src="../white_rose.gif" />
+                        <Card.Img variant="top" src="white_rose.gif" />
                     </Card>
                 </Col>
                 <Col xs={12} md={6}>
@@ -172,12 +173,21 @@ function Validated(){
             >
             <Modal.Header closeButton>
                 <Modal.Title id="final-goodbye">
-                Anh Thương Em Nhiều
+                    ❤️ Anh Thương Em Nhiều ❤️
                 </Modal.Title>
             </Modal.Header>
-            <Modal.Body>
-                <h4>Gọi Anh Nha</h4>
-                <p>
+            <Modal.Body className="text-center">
+                <motion.img
+                    src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExazJsbXEyOTUxejRkYmRibXNpam9lNjMxYnRibGhuc29xMHJmN3pzeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/14rtlR7b01cjQI/giphy.gif"
+                    alt="Cute GIF"
+                    className="rounded shadow-lg mb-3"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    style={{ width: "100%", maxWidth: "350px" }}
+                />
+                <h4 className="text-primary fw-bold">Gọi Anh Nha 🥰</h4>
+                <p className="text-muted fs-5">
                     Mình chuẩn bị coi phim rồi ăn gà rán được không?
                 </p>
             </Modal.Body>
