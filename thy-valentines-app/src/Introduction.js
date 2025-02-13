@@ -29,6 +29,7 @@ function Introduction(){
     const handleForm = (e)=>{
         e.preventDefault()
         const code = formInfo['code_entry']
+        console.log(process.env.REACT_APP_VALENTINE_CODE)
         if(code == process.env.REACT_APP_VALENTINE_CODE){
             // Our Code is validated so let's push to our validated route 
             navigate('/validated', {state: {code}})
