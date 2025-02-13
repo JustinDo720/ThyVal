@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/ThyVal/static/css/main.e0141ec9.css",
-    "main.js": "/ThyVal/static/js/main.a2f81428.js",
-    "static/js/488.0ab1d56a.chunk.js": "/ThyVal/static/js/488.0ab1d56a.chunk.js",
-    "static/media/background.jpg": "/ThyVal/static/media/background.4cc8251adcff0bef4e5f.jpg",
-    "index.html": "/ThyVal/index.html",
-    "main.e0141ec9.css.map": "/ThyVal/static/css/main.e0141ec9.css.map",
-    "main.a2f81428.js.map": "/ThyVal/static/js/main.a2f81428.js.map",
-    "488.0ab1d56a.chunk.js.map": "/ThyVal/static/js/488.0ab1d56a.chunk.js.map"
+    "main.css": "https://justindo720.github.io/ThyVal /static/css/main.f176eea7.css",
+    "main.js": "https://justindo720.github.io/ThyVal /static/js/main.95dbecbf.js",
+    "static/js/488.0ab1d56a.chunk.js": "https://justindo720.github.io/ThyVal /static/js/488.0ab1d56a.chunk.js",
+    "static/media/background.jpg": "https://justindo720.github.io/ThyVal /static/media/background.4cc8251adcff0bef4e5f.jpg",
+    "index.html": "https://justindo720.github.io/ThyVal /index.html",
+    "main.f176eea7.css.map": "https://justindo720.github.io/ThyVal /static/css/main.f176eea7.css.map",
+    "main.95dbecbf.js.map": "https://justindo720.github.io/ThyVal /static/js/main.95dbecbf.js.map",
+    "488.0ab1d56a.chunk.js.map": "https://justindo720.github.io/ThyVal /static/js/488.0ab1d56a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0141ec9.css",
-    "static/js/main.a2f81428.js"
+    "static/css/main.f176eea7.css",
+    "static/js/main.95dbecbf.js"
   ]
 }
