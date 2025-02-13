@@ -15,8 +15,8 @@ function App() {
       <Router basename="/ThyVal">
         <div className='background'>
           <Routes>
-            <Route path='/' element={<Introduction/>}></Route>
-            <Route path='/validated' element={<Validated/>}></Route>
+            <Route path='' element={<Introduction/>}></Route>
+            <Route path='validated' element={<Validated/>}></Route>
           </Routes>
         </div>
       </Router>
