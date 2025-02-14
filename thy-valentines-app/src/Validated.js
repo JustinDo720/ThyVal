@@ -20,6 +20,7 @@ function Validated(){
     const [denied, setDenied] = useState(0)
     const [constDenied, setConstDenied] = useState(false)
     const [showModal, setShowModal] = useState(false)
+    const [myWidth, setMyWidth] = useState(window.innerWidth < 768 ? '100%':'30rem')
 
     // My Split Message 
     const myMsg = [
@@ -38,6 +39,17 @@ function Validated(){
         if (code != process.env.REACT_APP_VALENTINE_CODE){
             // Return back to homepage
             navigate('/')
+        } else {
+            // We're valid. Let's check for innerWidth
+            // Again we create a function for our eventListener
+            const updatingWidth = ()=>{
+                setMyWidth(window.innerWidth < 768 ? '100%':'30rem')
+            }
+            // Mind you we ALREADY ran this logic because it's in our useState() default value 
+            // Now we need to build our event listener 
+            window.addEventListener('resize', updatingWidth)
+            // Unmount 
+            return () => window.removeEventListener('resize', updatingWidth)
         }
     }, [code, navigate])
 
@@ -76,24 +88,38 @@ function Validated(){
     }
 
     return(<>
-        <Container className='text-center mt-5'>
-            <Row>
-                <Col xs={12} md={12}>
-                    <h1 className="mb-4">
-                        <b>Vợ Anh ơi, Vợ Anh!</b>
-                    </h1>
-                    <p>Anh muốn nói với em cái này...</p>
-                </Col>
-            </Row>
-            <Container>
-            <Row>
+        <Container className='text-center mt-5' style={{maxWidth:'100%',overflow:'visible'}}>
+            {myWidth != '100%'?(
+                <Row>
+                    <Col xs={12} md={12}>
+                        <h1 className='mb-5'>
+                            Vợ Anh ơi, Vợ Anh!
+                        </h1>
+                        <p>Anh muốn nói với em cái này...</p>
+                    </Col>
+                </Row>
+            ):(<></>)}
+            <Row className="justify-content-end">
+                {myWidth != '100%'?(
+                    <Col xs={12} md={6}  className='d-flex justify-content-end'>
+                        <Card style={{ width:'38rem', background: 'transparent', border: 'transparent'}}>
+                            <Card.Img variant="top" src="white_rose.gif" />
+                        </Card>
+                    </Col>
+                ):(<></>)}
                 <Col xs={12} md={6}>
-                    <Card style={{ background: 'transparent', border: 'transparent'}}>
-                        <Card.Img variant="top" src="white_rose.gif" />
-                    </Card>
-                </Col>
-                <Col xs={12} md={6}>
-                <Card style={{ width: '30rem', margin: 'auto', background: '#FAF9F6'}} className='shadow-lg p-3'>
+                <Card style={{ width: myWidth, margin: 'auto', background: '#FAF9F6'}} className='shadow-lg p-3'>
+                    {myWidth == '100%'?(
+                        <>
+                            <Card.Img variant="top" src="white_rose.gif" />
+                            <Card.Body>
+                                <Card.Title>Vợ Anh ơi, Vợ Anh!</Card.Title>
+                                <Card.Text>
+                                    Anh muốn nói với em cái này...
+                                </Card.Text>
+                            </Card.Body>
+                        </>
+                    ):(<></>)}
                     <Card.Body>
                         <ListGroup className="list-group-flush" style={{textAlign: 'left'}}>
                             {loadingMsg.map((msg, index) => (
@@ -156,7 +182,6 @@ function Validated(){
                 </Card>
                 </Col>
             </Row>
-            </Container>
             <Toast delay={3000} autohide show={showDenial} onClose={()=>setShowDenial(false)} bg='danger'>
                 <Toast.Header>
                     <strong className="me-auto">Heyyyy</strong>
@@ -164,7 +189,6 @@ function Validated(){
                 <Toast.Body>Em không có được buồn anh nhaaaa. Iu em nhiều hơn nhiều.</Toast.Body>
             </Toast>
         </Container>
-
         <Modal
             size="lg"
             aria-labelledby="final-goodbye"

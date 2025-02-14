@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/ThyVal/static/css/main.e0141ec9.css",
-    "main.js": "/ThyVal/static/js/main.6abccd2c.js",
+    "main.js": "/ThyVal/static/js/main.dd91235e.js",
     "static/js/488.0ab1d56a.chunk.js": "/ThyVal/static/js/488.0ab1d56a.chunk.js",
     "static/media/background.jpg": "/ThyVal/static/media/background.4cc8251adcff0bef4e5f.jpg",
     "index.html": "/ThyVal/index.html",
     "main.e0141ec9.css.map": "/ThyVal/static/css/main.e0141ec9.css.map",
-    "main.6abccd2c.js.map": "/ThyVal/static/js/main.6abccd2c.js.map",
+    "main.dd91235e.js.map": "/ThyVal/static/js/main.dd91235e.js.map",
     "488.0ab1d56a.chunk.js.map": "/ThyVal/static/js/488.0ab1d56a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e0141ec9.css",
-    "static/js/main.6abccd2c.js"
+    "static/js/main.dd91235e.js"
   ]
 }

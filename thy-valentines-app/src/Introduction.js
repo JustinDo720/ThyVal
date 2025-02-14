@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -14,8 +14,23 @@ function Introduction(){
     // Build my navigate 
     const navigate = useNavigate() 
     const [showMessage, setShowMessage] = useState(false);
+    // Let's check our width immediately
+    const [cardWidth, setCardWidth] = useState(window.innerWidth < 768? "100%":'45rem')
     const [formInfo, setFormInfo] = useState({
     })
+
+    // Checking for mobile device to optimize our card component 
+    useEffect(()=>{
+        // Need a fuction to add to listener for event 
+        const handleResize = ()=>{
+            setCardWidth(window.innerWidth < 768? "100%":'30rem')
+        }
+
+        // Adding that Event listener (if resize event we run this handleResize func)
+        window.addEventListener('resize', handleResize)
+        // Once component unmounts we'll remove this eventListener 
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
 
     const updateForm = (event) => {
         let {name, value} = event.target
@@ -56,7 +71,7 @@ function Introduction(){
             </Row>
             <Row>
                 <Col xs={12} md={12}>
-                <Card style={{ width: '30rem', margin: 'auto'}} className='shadow-lg p-3'>
+                <Card style={{ width: cardWidth, margin: 'auto'}} className='shadow-lg p-3'>
                     <Card.Body>
                         <Form onSubmit={(e)=>handleForm(e)}>
                             <InputGroup className="mb-3">
@@ -90,28 +105,6 @@ function Introduction(){
             </Row>
         </Container>
         
-
-        {/* <div className="my-4">
-            <button
-            className="btn btn-primary btn-lg"
-            onClick={() => setShowMessage(true)}
-            >
-            Click Me! 🐱
-            </button>
-        </div>
-        {showMessage && (
-            <div className="alert alert-success mt-4" role="alert">
-            Will you be my Valentine? 💖
-            </div>
-        )}
-        <div className="mt-4">
-            <img
-            src="https://cataas.com/cat/gif"
-            alt="Cute Cat Meme"
-            className="img-fluid rounded shadow"
-            />
-        </div>
-        </div> */}
         </>
     )
 }

@@ -38,3 +38,6 @@ npm start
 ```
 npm install react-router-dom
 ```
+
+# Fixes
+- [ ] Mobile View
